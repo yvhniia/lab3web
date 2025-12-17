@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ЛР3 — Адаптивна сторінка</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header (Flex #1) -->
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="#">WebLab</a>
+
+      <button class="burger" aria-label="Відкрити меню" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav" aria-label="Головна навігація">
+        <a href="#about">Про нас</a>
+        <a href="#services">Послуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1>Адаптивна веб-сторінка</h1>
+        <p>
+          Приклад верстки з Flexbox, Grid та медіа-запитами.
+          Сторінка коректно підлаштовується під mobile, tablet і desktop.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#services">Перейти до послуг</a>
+          <a class="btn btn--ghost" href="#gallery">Подивитись галерею</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img
+          src="https://picsum.photos/900/650"
+          alt="Демо зображення"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- About (Flex #2) -->
+    <section id="about" class="section about">
+      <div class="about__row">
+        <div class="card">
+          <h2>Про проєкт</h2>
+          <p>
+            Тут показано використання відносних одиниць (rem, %), гнучких зображень,
+            Flexbox для вирівнювання та Grid для сітки карток.
+          </p>
+        </div>
+
+        <div class="card stats">
+          <div class="stat">
+            <div class="stat__num">2+</div>
+            <div class="stat__label">Flexbox місця</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">1+</div>
+            <div class="stat__label">Grid секція</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">3+</div>
+            <div class="stat__label">Media queries</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services (Grid #1) -->
+    <section id="services" class="section">
+      <h2>Послуги</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Верстка</h3>
+          <p>Адаптивні макети під смартфони, планшети й десктопи.</p>
+        </article>
+        <article class="card">
+          <h3>UI компоненти</h3>
+          <p>Кнопки, карточки, навігація, секції, форми.</p>
+        </article>
+        <article class="card">
+          <h3>Оптимізація</h3>
+          <p>Гнучкі зображення, акуратна типографіка, швидке завантаження.</p>
+        </article>
+        <article class="card">
+          <h3>Підтримка</h3>
+          <p>Легка підтримка та масштабування структури сторінки.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery (Grid auto-fit) -->
+    <section id="gallery" class="section">
+      <h2>Галерея</h2>
+      <div class="gallery">
+        <img src="https://picsum.photos/600/400?1" alt="Фото 1" loading="lazy" />
+        <img src="https://picsum.photos/600/400?2" alt="Фото 2" loading="lazy" />
+        <img src="https://picsum.photos/600/400?3" alt="Фото 3" loading="lazy" />
+        <img src="https://picsum.photos/600/400?4" alt="Фото 4" loading="lazy" />
+        <img src="https://picsum.photos/600/400?5" alt="Фото 5" loading="lazy" />
+        <img src="https://picsum.photos/600/400?6" alt="Фото 6" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" class="section">
+      <h2>Контакти</h2>
+      <form class="form">
+        <label>
+          Ім’я
+          <input type="text" placeholder="Ваше ім’я" />
+        </label>
+
+        <label>
+          Email
+          <input type="email" placeholder="name@example.com" />
+        </label>
+
+        <label class="form__full">
+          Повідомлення
+          <textarea rows="4" placeholder="Напишіть повідомлення..."></textarea>
+        </label>
+
+        <button class="btn btn--primary" type="button">Надіслати</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <p>© 2025 WebLab. ЛР3 — Адаптивна сторінка</p>
+      <div class="footer__links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Мінімальний JS для бургер-меню (не обов'язково, але зручно для мобільних)
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav');
+
+    burger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav--open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+  </script>
+</body>
+</html>
